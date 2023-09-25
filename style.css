@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+#header {
+    background-color: rgb(226, 226, 226);
+    padding: .7rem;
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 0 4.2rem 0;
+}
+
+.title-text {
+}
+
+.icons {
+    margin: .5rem .4rem;
+}
+
+.icons-grid {
+}
+
+.menu {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: flex;
+    align-items: center;
+    padding: .2rem;
+}
+
+.posts {
+
+}
+
+@media (max-width: 360px) {
+    .menu {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 2rem 0 1rem;
+    }
+    #title {
+        padding-bottom: .6rem;
+    }
+}
