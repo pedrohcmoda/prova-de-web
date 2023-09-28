@@ -233,13 +233,22 @@ label #cancel{
 
 #posts {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-items: center;
-    margin-right: 20rem;
+    margin-left: 30vw;
     flex-direction: column;
 }
 
 .post {
     margin-bottom: 1rem;
+    display: grid;
+    gap: .3rem;
+    margin-top: 2rem;
+    border-width: 600px;
     border-bottom: #1e1e1e solid 1px;
+}
+
+
+.post-data {
+    color: #888888;
 }

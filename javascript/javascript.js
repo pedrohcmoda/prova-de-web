@@ -10,24 +10,29 @@ document.getElementById('fecharPostar').addEventListener('click', function() {
 
 function addPost() {
     var lista = document.getElementById('posts');
-    var novoItem = document.createElement('li');
+    var novoItem = document.createElement('dt');
     var novoDiv = document.createElement('div');
     var novoTitulo = document.createElement('h2');
     var novaData = document.createElement('p');
     var novaDescricao = document.createElement('p');
 
     novoTitulo.textContent = document.getElementById('input-titulo').value;
-    novaData.textContent = 'Data: ' + new Date().toLocaleDateString();
+    novaData.textContent = new Date().toLocaleDateString();
     novaDescricao.textContent = document.getElementById('input-descricao').value;
 
     var novoExcluir = document.createElement('a');
     var novaLixeira = document.createElement('img');
 
     novaLixeira.src = '/assets/trash-regular-24.png'
-    novaLixeira.alt = 'Lixeira';
-    
+    novaLixeira.alt = 'Lixeira';    
     novoExcluir.appendChild(novaLixeira);
 
+    novoExcluir.addEventListener("click", function deletePosts(this){
+        var divPai = this.parentElement;
+        divPai.remove();
+    });
+
+    novaData.classList.add('post-data');
 
     novoDiv.appendChild(novoTitulo);
     novoDiv.appendChild(novaData);
@@ -46,8 +51,4 @@ function searchPosts() {
     var query = document.getElementById('search-query').value;
     // Adicione aqui o código para buscar as postagens
     closeDialog('search-dialog');
-}
-
-function deletePost(postId) {
-    // Adicione aqui o código para excluir a postagem com o ID 'postId'
 }
