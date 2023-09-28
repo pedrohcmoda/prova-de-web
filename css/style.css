@@ -33,7 +33,7 @@
     width: 240px;
     left: -240px;
     height: 100%;
-    background: #1e1e1e;
+    background: rgb(112, 106, 106);
     transition: all .5s ease;   
 }
 
@@ -42,7 +42,7 @@
     color: white;
     line-height: 70px;
     text-align: center;
-    background: rgb(90, 90, 90);
+    background: rgb(80, 80, 80);
     user-select: none;
 }
 
@@ -59,9 +59,9 @@
     transition: all .5s ease;
 }
 
-a.active,a:hover{
+.sidebar a.active,.sidebar a:hover{
     border-left: 5px solid #593632;
-    color: #b93632;
+    color: #532524;
 }
 
 .sidebar a i{
@@ -229,4 +229,17 @@ label #cancel{
 .fazer-postagem {
     margin: .2rem;
     padding: .2rem;
+}
+
+#posts {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-right: 20rem;
+    flex-direction: column;
+}
+
+.post {
+    margin-bottom: 1rem;
+    border-bottom: #1e1e1e solid 1px;
 }

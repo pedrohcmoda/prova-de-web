@@ -15,15 +15,26 @@ function addPost() {
     var novoTitulo = document.createElement('h2');
     var novaData = document.createElement('p');
     var novaDescricao = document.createElement('p');
-    
+
     novoTitulo.textContent = document.getElementById('input-titulo').value;
     novaData.textContent = 'Data: ' + new Date().toLocaleDateString();
     novaDescricao.textContent = document.getElementById('input-descricao').value;
 
+    var novoExcluir = document.createElement('a');
+    var novaLixeira = document.createElement('img');
+
+    novaLixeira.src = '/assets/trash-regular-24.png'
+    novaLixeira.alt = 'Lixeira';
+    
+    novoExcluir.appendChild(novaLixeira);
+
+
     novoDiv.appendChild(novoTitulo);
     novoDiv.appendChild(novaData);
     novoDiv.appendChild(novaDescricao);
+    novoDiv.appendChild(novoExcluir);
 
+    novoDiv.classList.add('post');
     // Adicionar a div ao item da lista
     novoItem.appendChild(novoDiv);
     // Adicionar item à lista
