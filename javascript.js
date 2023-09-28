@@ -1,8 +1,10 @@
-document.getElementById('abrirModal').addEventListener('click', function() {
-    document.getElementById('modal').style.display = 'block';
+var $modal = document.getElementById('modal');
+
+document.getElementById('abrirPostar').addEventListener('click', function() {
+    $modal.style.display = 'block';
 });
 
-document.getElementById('fecharModal').addEventListener('click', function() {
+document.getElementById('fecharPostar').addEventListener('click', function() {
     document.getElementById('modal').style.display = 'none';
 });
 
@@ -12,23 +14,18 @@ function addPost() {
     var novoDiv = document.createElement('div');
     var novoTitulo = document.createElement('h2');
     var novaData = document.createElement('p');
-    var novoConteudo = document.createElement('p');
+    var novaDescricao = document.createElement('p');
     
-    var title = document.getElementById('post-title').value;
-    var content = document.getElementById('post-content').value;
-    // Adicione aqui o código para inserir a postagem na lista
-
-    novoTitulo.textContent = 'Título do Item';
+    novoTitulo.textContent = document.getElementById('input-titulo').value;
     novaData.textContent = 'Data: ' + new Date().toLocaleDateString();
-    novoConteudo.textContent = 'Conteúdo do Item';
+    novaDescricao.textContent = document.getElementById('input-descricao').value;
 
     novoDiv.appendChild(novoTitulo);
     novoDiv.appendChild(novaData);
-    novoDiv.appendChild(novoConteudo);
+    novoDiv.appendChild(novaDescricao);
 
     // Adicionar a div ao item da lista
     novoItem.appendChild(novoDiv);
-
     // Adicionar item à lista
     lista.appendChild(novoItem);
 

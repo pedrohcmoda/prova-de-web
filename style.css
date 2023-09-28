@@ -182,7 +182,7 @@ label #cancel{
     }
 }
 
-.modal {
+#modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -216,4 +216,17 @@ label #cancel{
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+#input-titulo{
+    margin: .2rem;
+}
+
+#input-descricao{
+    margin: .2rem;
+}
+
+.fazer-postagem {
+    margin: .2rem;
+    padding: .2rem;
 }

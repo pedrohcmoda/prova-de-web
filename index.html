@@ -6,7 +6,6 @@
     <title>Projeto Web</title>
 
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/javascript.js">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,9 +34,9 @@
                         <span>Painel</span>
                     </i>
                 </a>
-                <a href="#">
+                <a href="#" id="abrirPostar">
                     <i>
-                        <box-icon name='add-to-queue' onclick="addPost()" color="white"></box-icon>
+                        <box-icon name='add-to-queue' color="white"></box-icon>
                         <span>Postar</span>
                     </i>
                 </a>
@@ -59,10 +58,12 @@
         </div>
     </div>
     
-    <div id="modal" class="modal">
+    <div id="modal">
         <div class="modal-content">
-            <span class="close" id="fecharModal">&times;</span>
-            <p>Conteúdo da caixa de diálogo.</p>
+            <span class="close" id="fecharPostar">&times;</span>
+            <input type="text" id="input-titulo" placeholder="Digite um título">
+            <input type="text" id="input-descricao" placeholder="Digite uma descrição">
+            <button class="fazer-postagem" onclick="addPost()">POSTAR</button>
         </div>
     </div>
 
@@ -74,5 +75,6 @@
 </body>
 
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="/javascript.js"></script>
 
 </html>
