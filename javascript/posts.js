@@ -114,6 +114,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
   
+//
+
 
 function converterData(dataNoFormatoAAAAMMDD) {
     if(dataNoFormatoAAAAMMDD===''){
@@ -144,42 +146,31 @@ function buscar(e) {
         if (/^Postagem_\d+$/.test(key)) {
             const postagem = JSON.parse(value);
 
-            console.log(postagem.data);
-            console.log(data);
-
-
             const titulo = postagem.titulo.toLowerCase();
             
-            if(nome === '' || data === '') {   
+            if(nome !== '' && data !== '') {
 
-                if (titulo.includes(nome) || postagem.data == data) {
+                console.log(postagem.data);
+                console.log(data);
+                if (titulo.includes(nome) && postagem.data === data) {
                     var novoItem = showPost(key.split('_')[1], postagem.titulo, postagem.data, postagem.desc);
                     document.getElementById('buscado').appendChild(novoItem);
                 }
 
-            }
-            
-            
-            else{
-                    if (titulo.includes(nome) || postagem.data == data) {
-                        var novoItem = showPost(key.split('_')[1], postagem.titulo, postagem.data, postagem.desc);
-                        document.getElementById('buscado').appendChild(novoItem);
-                    }
+            } else if (nome === '' && data !== '') {
 
+                if (postagem.data === data) {
+                    var novoItem = showPost(key.split('_')[1], postagem.titulo, postagem.data, postagem.desc);
+                    document.getElementById('buscado').appendChild(novoItem);
+                }
+
+            } else if (nome !== '' && data === '') {
+
+                if (titulo.includes(nome)) {
+                    var novoItem = showPost(key.split('_')[1], postagem.titulo, postagem.data, postagem.desc);
+                    document.getElementById('buscado').appendChild(novoItem);
+                }
             }
         }
     });
 }
-
-
-
-/*
-function searchPosts() {
-    var query = document.getElementById('search-query').value;
-    
-
-
-    
-    closeDialog('search-dialog');
-}
-*/
