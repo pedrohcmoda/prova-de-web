@@ -59,21 +59,23 @@
     </div>
     
     <div id="modal">
-        <div class="modal-content">
-            <span class="close" id="fecharPostar">&times;</span>
-            <input type="text" id="input-titulo" placeholder="Digite um título">
-            <input type="text" id="input-descricao" placeholder="Digite uma descrição">
-            <button class="fazer-postagem" onclick="addPost()">POSTAR</button>
-        </div>
-    </div>
+        <form id="modal-content" >
+            <span class="close" id="fecharPostar"><img class="close" src="/assets/x-regular-24.png" alt="Icone de fechar"></span>
+
+            <input type="text" id="input-titulo" placeholder="Digite um título" required>
+            <div id="contador-caracteres">30 caracteres restantes</div>
+            <input type="text" id="input-descricao" placeholder="Digite uma descrição" required>
+
+            <button type="submit" id="submit" class="fazer-postagem">POSTAR</button>
+        </form>
+    </div> 
 
     <dl id="posts">
     </dl>
-
-
     
 </body>
 
-<script src="/javascript/javascript.js"></script>
+<script src="/javascript/posts.js"></script>
+<script src="/javascript/modal.js"></script>
 
 </html>

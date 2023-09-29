@@ -153,6 +153,10 @@ label #cancel{
         opacity: 1;
         visibility: visible;
     }
+        
+    .close {
+        width: 80%;
+    }
 }
 
 @media (max-width: 360px) {
@@ -196,45 +200,54 @@ label #cancel{
     padding-top: 60px;
 }
 
-.modal-content {
+#modal-content {
+    word-wrap: break-word;
     background-color: #fefefe;
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    gap: .3rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    align-self: flex-start;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
-    text-decoration: none;
     cursor: pointer;
 }
 
-#input-titulo{
-    margin: .2rem;
+#input-titulo {
+    width: 80%;
+}
+
+#contador-caracteres {
+    width: 80%;
+    font-size: .9rem;
 }
 
 #input-descricao{
-    margin: .2rem;
+    width: 80%;
+    padding: 0 0 2rem 0;
 }
 
 .fazer-postagem {
-    margin: .2rem;
+    width: 80%;
     padding: .2rem;
+    margin-top: 1.2rem;
+    margin-bottom: 3.5rem;
 }
 
 #posts {
     display: flex;
     align-items: start;
     justify-items: center;
+    width: 60vw;
     margin-left: 30vw;
     flex-direction: column;
 }
@@ -244,11 +257,20 @@ label #cancel{
     display: grid;
     gap: .3rem;
     margin-top: 2rem;
-    border-width: 600px;
-    border-bottom: #1e1e1e solid 1px;
 }
-
 
 .post-data {
     color: #888888;
+}
+
+.post-desc {
+    white-space: normal;
+    word-wrap: break-word;
+    text-wrap: nowrap;
+    max-width: 60vw;
+}
+
+dt {
+    border-bottom: #000000 solid 1px;
+    width: 50vw;
 }
