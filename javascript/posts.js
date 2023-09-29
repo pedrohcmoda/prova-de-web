@@ -15,7 +15,7 @@ function showPost(id, titulo, data, desc) {
     novaData.textContent = data;
     novaDescricao.textContent = desc;
 
-    novaLixeira.src = '/assets/trash-regular-24.png'
+    novaLixeira.src = './assets/trash-regular-24.png'
     novaLixeira.alt = 'Lixeira';    
     novoExcluir.appendChild(novaLixeira);
 
@@ -96,9 +96,6 @@ function savePost(titulo, data, desc) {
     return novaPostagem.id;
 }
 
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
     
     Object.entries(localStorage).forEach(([key, value]) => {
@@ -117,31 +114,58 @@ document.addEventListener("DOMContentLoaded", function() {
 
 });
   
-/*
 
-function buscar(nome, data) {
-    
+function converterData(dataNoFormatoAAAAMMDD) {
+    var partes = dataNoFormatoAAAAMMDD.split("-");
+    var ano = partes[0];
+    var mes = partes[1];
+    var dia = partes[2];
+    var dataFormatada = dia + "/" + mes + "/" + ano;
+    return dataFormatada;
+  }
+
+document.getElementById("busca").addEventListener("submit", function (event) {
+    buscar(event);
+});
+
+
+function buscar(e) {
+    e.preventDefault();
+
+    document.getElementById("buscado").innerHTML = '';
+
+    var nome = document.getElementById("pesquisaNome").value.toLowerCase();
+    var data = converterData(document.getElementById("pesquisaData").value);
+
     Object.entries(localStorage).forEach(([key, value]) => {
-
         if (/^Postagem_\d+$/.test(key)) {
-
             const postagem = JSON.parse(value);
-            
-            if(postagem.nome == nome || postagem.data == data) {
-                
-                var novoItem = showPost(key.split('_')[1], postagem.titulo, postagem.data, postagem.desc);
 
-                document.getElementById('--MUDAR O ID PARA O DESEJADO--').appendChild(novoItem);
+            console.log(postagem.data);
+            console.log(data);
 
+
+            const titulo = postagem.titulo.toLowerCase();
+            if(nome === '' || data === '') {   
+                if (titulo.includes(nome) || postagem.data == data) {
+                    var novoItem = showPost(key.split('_')[1], postagem.titulo, postagem.data, postagem.desc);
+                    document.getElementById('buscado').appendChild(novoItem);
+                }
+            }else{
+                if(nome.isEmpty() && data.isEmpty()) {   
+                    if (titulo.includes(nome) || postagem.data == data) {
+                        var novoItem = showPost(key.split('_')[1], postagem.titulo, postagem.data, postagem.desc);
+                        document.getElementById('buscado').appendChild(novoItem);
+                    }
+                }
             }
-
         }
-
     });
 }
 
-*/
 
+
+/*
 function searchPosts() {
     var query = document.getElementById('search-query').value;
     
@@ -150,3 +174,4 @@ function searchPosts() {
     
     closeDialog('search-dialog');
 }
+*/
