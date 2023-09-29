@@ -152,7 +152,7 @@ function buscar(e) {
                     document.getElementById('buscado').appendChild(novoItem);
                 }
             }else{
-                if(nome.isEmpty() && data.isEmpty()) {   
+                if(nome === '' && data === '') {   
                     if (titulo.includes(nome) || postagem.data == data) {
                         var novoItem = showPost(key.split('_')[1], postagem.titulo, postagem.data, postagem.desc);
                         document.getElementById('buscado').appendChild(novoItem);
