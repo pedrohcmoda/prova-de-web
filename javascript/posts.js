@@ -150,8 +150,6 @@ function buscar(e) {
             
             if(nome !== '' && data !== '') {
 
-                console.log(postagem.data);
-                console.log(data);
                 if (titulo.includes(nome) && postagem.data === data) {
                     var novoItem = showPost(key.split('_')[1], postagem.titulo, postagem.data, postagem.desc);
                     document.getElementById('buscado').appendChild(novoItem);
