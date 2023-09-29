@@ -116,6 +116,9 @@ document.addEventListener("DOMContentLoaded", function() {
   
 
 function converterData(dataNoFormatoAAAAMMDD) {
+    if(dataNoFormatoAAAAMMDD===''){
+        return '';
+    }
     var partes = dataNoFormatoAAAAMMDD.split("-");
     var ano = partes[0];
     var mes = partes[1];
@@ -146,18 +149,23 @@ function buscar(e) {
 
 
             const titulo = postagem.titulo.toLowerCase();
+            
             if(nome === '' || data === '') {   
+
                 if (titulo.includes(nome) || postagem.data == data) {
                     var novoItem = showPost(key.split('_')[1], postagem.titulo, postagem.data, postagem.desc);
                     document.getElementById('buscado').appendChild(novoItem);
                 }
-            }else{
-                if(nome === '' && data === '') {   
+
+            }
+            
+            
+            else{
                     if (titulo.includes(nome) || postagem.data == data) {
                         var novoItem = showPost(key.split('_')[1], postagem.titulo, postagem.data, postagem.desc);
                         document.getElementById('buscado').appendChild(novoItem);
                     }
-                }
+
             }
         }
     });

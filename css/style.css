@@ -306,10 +306,10 @@ label #cancel{
     color: #888888;
 }
 
-.post-desc {
+.post-des {
     white-space: normal;
     word-wrap: break-word;
-    text-wrap: nowrap;
+    overflow-wrap: nowrap;
     max-width: 60vw;
 }
 
